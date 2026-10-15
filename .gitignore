@@ -1,0 +1,12 @@
+# local debug scripts (contain historical credentials, keep out of repo)
+_local_debug/
+*.bak
+# downloaded deb packages
+debs/
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+# editor files
+.vscode/
+.idea/

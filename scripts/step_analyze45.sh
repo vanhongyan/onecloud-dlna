@@ -1,0 +1,4 @@
+#!/bin/bash
+journalctl -u gmediarender --no-pager --since '18:27' | grep -E 'Access /upnp' | grep -oE 'GET /upnp/[a-zA-Z]+' | sort | uniq -c | sort -rn | head -10
+echo ===DISCOVER===
+gst-discoverer-1.0 "http://v9-cold1.douyinvod.com/9f0457f8589a17357079b1d7ffaa20b1/6ac83536/video/tos/cn/tos-cn-ve-15c000-ce/oYduVJEz8QGegfAlIS7BDErHmQL97jwILDKyeq/?cast_type=ott_cast&a=1128&ch=0&cr=0&dr=0&cd=0%7C0%7C0%7C0&cv=1&br=972&bt=972&cs=0&ds=3&ft=ElUQrWWFBMyqOaSoO0pqk_vjVQBw&mime_type=video_mp4&qs=0&rc=NDxoZTszOzhoOjVlNzo6ZEBpM2p5ZHY5cjdxZTMzbGkzNUBgNWIwMTA2NS0xYWJiLS0tYSNncWtyMmRrYzBhLS1kLTVzcw%3D%3D&btag=c0050e00098040&cdn_type=3&cquery=101u&dy_q=1791484088&feature_id=f5241e7604dff1d9d6c943fd20bd51a2&l=20261009022808AC586BE40574A7622C31&pdp=no_detect_popularity&pwid=313&req_cdn_type=r" 2>&1 | grep -iE 'Width|Height|frame_rate|codec|error' | head -8

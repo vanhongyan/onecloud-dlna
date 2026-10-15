@@ -1,0 +1,14 @@
+[Unit]
+Description=gmrender idle screen watcher
+After=gmediarender.service
+Requires=gmediarender.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sh -c 'echo 0 > /sys/class/vtconsole/vtcon1/bind || true'
+ExecStart=/usr/bin/python3 /home/src/fb_watch.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
